@@ -1,0 +1,641 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "苹方";
+}
+@mixin user($size) {
+  $lists:320px,360px,375px,384px,411px,414px,460px,640px;
+  html{
+    @each $list in $lists{
+      @media screen and(width: $list){
+        font-size: 100px*($list/$size);
+      }
+    }
+  }
+}
+@include user(320px);
+/////////////////顶部
+.toubu{
+  width: 100%;
+  height: 44px;
+  background: #373A41;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .wx{
+    font-size: 0.2rem;
+    color: #fff;
+    display: inline-block;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0.25rem;
+  }
+  .search{
+    &:before{
+      display: inline-block;
+      font-size: 0.2rem;
+      content: "\e6a4";
+      color: #fff;
+      position: absolute;
+      top: 0.07rem;
+      left: 75%;
+    }
+  }
+  .add{
+    &:before{
+      content: "\3466";
+      color: #fff;
+      font-size: 0.24rem;
+      position: absolute;
+      right: 0.1rem;
+      top: 0.05rem;
+      display: inline-block;
+      font-weight: normal;
+    }
+  }
+}
+//////////////微信页面
+.weixin{
+  position: absolute;
+  background:#fff;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height:4.78rem;
+  overflow: auto;
+  li{
+    width: 100%;
+    height: 0.75rem;
+    border-bottom: 1px solid #d7d7d7;
+    position: relative;
+    img{
+      position: absolute;
+      top: 0.1rem;
+      left: 0.2rem;
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+    .name{
+      font-size: 0.16rem;
+      color: #000;
+      line-height: 0.24rem;
+      height: 0.24rem;
+      width: 50%;
+      position: absolute;
+      top: 0.1rem;
+      left: 0.9rem;
+    }
+    .content{
+      font-size: 0.14rem;
+      color: #888;
+      line-height: 0.18rem;
+      width: 50%;
+      height: 0.18rem;
+      position: absolute;
+      left: 0.9rem;
+      top: 0.4rem;
+    }
+    .time{
+      font-size: 0.12rem;
+      color: #999;
+      line-height: 0.18rem;
+      position: absolute;
+      right: 0.1rem;
+      top: 0.1rem;
+    }
+    .sound{
+      position: absolute;
+      right: 0.1rem;
+      top: 0.4rem;
+      color: #999;
+      font-size: 0.12rem;
+    }
+  }
+}
+//////////////点击加号
+label{
+  position: fixed;
+  top: 0.07rem;
+  right: 0.1rem;
+  width: 0.23rem;
+  height: 0.34rem;
+}
+#xuan{
+  display: none;
+}
+.jiahao{
+  display: none;
+  width: 1.8rem;
+  height: 2rem;
+  background: rgba(30, 31, 30, 0.88);
+  position: fixed;
+  top: 44px;
+  right: 0.1rem;
+  z-index: 100;
+  li{
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid #111;
+    position: relative;
+    span{
+      font-size: 0.14rem;
+      color: #fff;
+      padding-left: 0.2rem;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0.2rem;
+      display: inline-block;
+      height: 0.2rem;
+    }
+  }
+  li:nth-child(1){
+    span{
+      &::before{
+        content: "\e65c";
+        font-size: 0.2rem;
+        color: #fff;
+        position: absolute;
+        left: -0.1rem;
+        top: 0;
+      }
+    }
+  }
+  li:nth-child(2){
+    span{
+      &::before{
+        content: "\e61d";
+        font-size: 0.2rem;
+        color: #fff;
+        position: absolute;
+        left: -0.1rem;
+        top: -0.03rem;
+      }
+    }
+  }
+  li:nth-child(3){
+    span{
+      &::before{
+        content: "\e602";
+        font-size: 0.2rem;
+        color: #fff;
+        position: absolute;
+        left: -0.1rem;
+        top: 0;
+      }
+    }
+  }
+  li:nth-child(4){
+    span{
+      &::before{
+        content: "\e628";
+        font-size: 0.2rem;
+        color: #fff;
+        position: absolute;
+        left: -0.1rem;
+        top: -0.03rem;
+      }
+    }
+  }
+  li:nth-child(5){
+    span{
+      &::before{
+        content: "\e877";
+        font-size: 0.2rem;
+        color: #fff;
+        position: absolute;
+        left: -0.1rem;
+        top: -0.03rem;
+      }
+    }
+  }
+}
+
+#xuan:checked+.jiahao{
+  display: block;
+}
+
+///////////////联系人界面
+.lianxiren{
+  position: absolute;
+  background: #ebebeb;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height:4.78rem;
+  overflow: auto;
+  dd{
+    width: 100%;
+    height: 0.6rem;
+    background: #fff;
+    a{
+      margin: 0 auto;
+      display: block;
+      width: 90%;
+      height: 100%;
+      border-bottom: 1px solid #ececec;
+      position: relative;
+      div{
+        width: 0.4rem;
+        height: 0.4rem;
+        position: absolute;
+        top: 0.1rem;
+        left: 0.2rem;
+      }
+      img{
+        width: 0.4rem;
+        height: 0.4rem;
+        position: absolute;
+        top: 0.1rem;
+        left: 0.2rem;
+      }
+      p{
+        position: absolute;
+        left: 0.8rem;
+        top: 0.2rem;
+        width: 50%;
+        height: 0.3rem;
+        font-size: 0.16rem;
+        color: #333;
+      }
+    }
+
+  }
+  dt{
+    width: 100%;
+    height: 0.3rem;
+    color: #888;
+    padding-left: 0.3rem;
+    box-sizing: border-box;
+    line-height: 0.3rem;
+    font-size: 0.16rem;
+  }
+}
+.new{
+  background: #FA9D3B;
+  &::before{
+    content: "\e61d";
+    color: #fff;
+    font-size: 0.35rem;
+    position: absolute;
+    left: 0.02rem;
+    top: 0;
+  }
+}
+.qun{
+  background: #45C01A;
+  &::before{
+    content: "\e652";
+    color: #fff;
+    font-size: 0.35rem;
+    position: absolute;
+    left: 0.02rem;
+    top: 0;
+  }
+}
+.bian{
+  background: #2782D7;
+  &::before{
+    content: "\e629";
+    color: #fff;
+    font-size: 0.33rem;
+    position: absolute;
+    left: 0.03rem;
+    top: -0.03rem;
+  }
+}
+.gong{
+  background: #2782D7;
+  &::before{
+    content: "\e6f1";
+    color: #fff;
+    font-size: 0.3rem;
+    position: absolute;
+    left: 0;
+    top: 0.03rem;
+  }
+}
+
+
+////////////发现界面
+.faxian{
+  position: absolute;
+  background: #ebebeb;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height:4.78rem;
+  overflow: auto;
+  dt{
+    width: 100%;
+    height: 0.3rem;
+  }
+  dd{
+    width: 100%;
+    height: 0.5rem;
+    background: #fff;
+    position: relative;
+    a{
+      margin: 0 auto;
+      display: block;
+      width: 90%;
+      height: 100%;
+      border-bottom: 1px solid #e0e0e0;
+      box-sizing: border-box;
+      line-height: 0.5rem;
+      padding-left: 0.4rem;
+      color: #333;
+      font-size: 0.16rem;
+    }
+  }
+
+}
+#fri{
+  &::before{
+    content: "\e706";
+    position: absolute;
+    left: 0.2rem;
+    top: 0;
+    font-size: 0.2rem;
+    color: rgb(211, 244, 51);
+  }
+}
+#sao{
+  &::before{
+    content: "\e602";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.01rem;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#yao{
+  &::before{
+    content: "\e685";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.01rem;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#fu{
+  &::before{
+    content: "\e652";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.01rem;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#piao{
+  &::before{
+    content: "\e60a";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.01rem;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#gou{
+  &::before{
+    content: "\e65f";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.01rem;
+    font-size: 0.24rem;
+    color: #F86161;
+  }
+}
+#you{
+  &::before{
+    content: "\e6e6";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.01rem;
+    font-size: 0.24rem;
+    color: #F86161;
+  }
+}
+
+///////////////////我的页面
+.wo{
+  position: absolute;
+  background: #ebebeb;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height:4.78rem;
+  overflow: auto;
+  dt{
+    width: 100%;
+    height: 0.2rem;
+  }
+  dd{
+    width: 100%;
+    height: 0.6rem;
+    background: #fff;
+    a{
+      position: relative;
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      display: block;
+      line-height: 0.6rem;
+      box-sizing: border-box;
+      padding-left: 0.3rem;
+      color: #333;
+      font-size: 0.16rem;
+      border-bottom: 1px solid #edede8;
+    }
+  }
+  .geren{
+    height: 0.9rem;
+    position: relative;
+    img{
+      width: 0.7rem;
+      position: absolute;
+      left: 0.2rem;
+      top: 0.1rem;
+    }
+    p{
+      width: 50%;
+      height: 0.3rem;
+      position: absolute;
+      left: 1rem;
+      top: 0.2rem;
+      color: #666;
+      font-size: 0.16rem;
+    }
+    span{
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      color: #888;
+      font-size: 0.14rem;
+    }
+    &::after{
+      content: "\e630";
+      font-size: 0.4rem;
+      color: #888;
+      position: absolute;
+      right: 0.2rem;
+      top: 0.15rem;
+    }
+  }
+}
+#ce{
+  &::before{
+    content: "\e601";
+    position: absolute;
+    left: 0;
+    top: 0.02rem;
+    font-size: 0.2rem;
+    color: #10AEFF;
+  }
+}
+#shouc{
+  &::before{
+    content: "\e687";
+    position: absolute;
+    left: -0.02rem;
+    top: 0;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#qianb{
+  &::before{
+    content: "\e625";
+    position: absolute;
+    left: -0.02rem;
+    top: 0;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#youh{
+  &::before{
+    content: "\e610";
+    position: absolute;
+    left: -0.02rem;
+    top: 0;
+    font-size: 0.24rem;
+    color: #10AEFF;
+  }
+}
+#biaoq{
+  &::before{
+    content: "\e6b1";
+    position: absolute;
+    left: -0.02rem;
+    top: 0;
+    font-size: 0.24rem;
+    color: #FFCA00;
+  }
+}
+/////////////////底部
+.dibu{
+  z-index: 10;
+  background: #fcfcfc;
+  border-top: 1px solid #dadada;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  margin: 0;
+  li{
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    span{
+      color: #999;
+      font-size: 0.12rem;
+      line-height:0.73rem;
+    }
+  }
+  li:nth-child(1){
+    span{
+      &::before{
+        content: "\e65c";
+        font-size: 0.2rem;
+        // display: block;
+        color: #999;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -0.16rem;
+      }
+    }
+  }
+  li:nth-child(2){
+    span{
+      &::before{
+        content: "\e621";
+        font-size: 0.2rem;
+        display: block;
+        color: #999;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -0.18rem;
+      }
+    }
+  }
+  li:nth-child(3){
+    span{
+      &::before{
+        content: "\e608";
+        font-size: 0.2rem;
+        display: block;
+        color: #999;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -0.16rem;
+      }
+    }
+  }
+  li:nth-child(4){
+    span{
+      &::before{
+        content: "\e60d";
+        font-size: 0.2rem;
+        display: block;
+        color: #999;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -0.18rem;
+      }
+    }
+  }
+}
+///////////////选中字体变色
+.dibu li .bianse{
+  color: #46BF1C;
+  &::before{
+    color: #46bf1c;
+  }
+}
+/////////////点击层级变高
+.cengji{
+  z-index: 5;
+}

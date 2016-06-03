@@ -1,0 +1,670 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "苹方";
+}
+
+@media screen and (width: 320px) {
+  html {
+    font-size: 100px;
+  }
+}
+
+@media screen and (width: 360px) {
+  html {
+    font-size: 112.5px;
+  }
+}
+
+@media screen and (width: 375px) {
+  html {
+    font-size: 117.1875px;
+  }
+}
+
+@media screen and (width: 384px) {
+  html {
+    font-size: 120px;
+  }
+}
+
+@media screen and (width: 411px) {
+  html {
+    font-size: 128.4375px;
+  }
+}
+
+@media screen and (width: 414px) {
+  html {
+    font-size: 129.375px;
+  }
+}
+
+@media screen and (width: 460px) {
+  html {
+    font-size: 143.75px;
+  }
+}
+
+@media screen and (width: 640px) {
+  html {
+    font-size: 200px;
+  }
+}
+
+.toubu {
+  width: 100%;
+  height: 44px;
+  background: #373A41;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.toubu .wx {
+  font-size: 0.2rem;
+  color: #fff;
+  display: inline-block;
+  height: 0.25rem;
+  line-height: 0.25rem;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0.25rem;
+}
+
+.toubu .search:before {
+  display: inline-block;
+  font-size: 0.2rem;
+  content: "\e6a4";
+  color: #fff;
+  position: absolute;
+  top: 0.07rem;
+  left: 75%;
+}
+
+.toubu .add:before {
+  content: "\3466";
+  color: #fff;
+  font-size: 0.24rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.05rem;
+  display: inline-block;
+  font-weight: normal;
+}
+
+.weixin {
+  position: absolute;
+  background: #fff;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 4.78rem;
+  overflow: auto;
+}
+
+.weixin li {
+  width: 100%;
+  height: 0.75rem;
+  border-bottom: 1px solid #d7d7d7;
+  position: relative;
+}
+
+.weixin li img {
+  position: absolute;
+  top: 0.1rem;
+  left: 0.2rem;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+.weixin li .name {
+  font-size: 0.16rem;
+  color: #000;
+  line-height: 0.24rem;
+  height: 0.24rem;
+  width: 50%;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.9rem;
+}
+
+.weixin li .content {
+  font-size: 0.14rem;
+  color: #888;
+  line-height: 0.18rem;
+  width: 50%;
+  height: 0.18rem;
+  position: absolute;
+  left: 0.9rem;
+  top: 0.4rem;
+}
+
+.weixin li .time {
+  font-size: 0.12rem;
+  color: #999;
+  line-height: 0.18rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+}
+
+.weixin li .sound {
+  position: absolute;
+  right: 0.1rem;
+  top: 0.4rem;
+  color: #999;
+  font-size: 0.12rem;
+}
+
+label {
+  position: fixed;
+  top: 0.07rem;
+  right: 0.1rem;
+  width: 0.23rem;
+  height: 0.34rem;
+}
+
+#xuan {
+  display: none;
+}
+
+.jiahao {
+  display: none;
+  width: 1.8rem;
+  height: 2rem;
+  background: rgba(30, 31, 30, 0.88);
+  position: fixed;
+  top: 44px;
+  right: 0.1rem;
+  z-index: 100;
+}
+
+.jiahao li {
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid #111;
+  position: relative;
+}
+
+.jiahao li span {
+  font-size: 0.14rem;
+  color: #fff;
+  padding-left: 0.2rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.2rem;
+  display: inline-block;
+  height: 0.2rem;
+}
+
+.jiahao li:nth-child(1) span::before {
+  content: "\e65c";
+  font-size: 0.2rem;
+  color: #fff;
+  position: absolute;
+  left: -0.1rem;
+  top: 0;
+}
+
+.jiahao li:nth-child(2) span::before {
+  content: "\e61d";
+  font-size: 0.2rem;
+  color: #fff;
+  position: absolute;
+  left: -0.1rem;
+  top: -0.03rem;
+}
+
+.jiahao li:nth-child(3) span::before {
+  content: "\e602";
+  font-size: 0.2rem;
+  color: #fff;
+  position: absolute;
+  left: -0.1rem;
+  top: 0;
+}
+
+.jiahao li:nth-child(4) span::before {
+  content: "\e628";
+  font-size: 0.2rem;
+  color: #fff;
+  position: absolute;
+  left: -0.1rem;
+  top: -0.03rem;
+}
+
+.jiahao li:nth-child(5) span::before {
+  content: "\e877";
+  font-size: 0.2rem;
+  color: #fff;
+  position: absolute;
+  left: -0.1rem;
+  top: -0.03rem;
+}
+
+#xuan:checked + .jiahao {
+  display: block;
+}
+
+.lianxiren {
+  position: absolute;
+  background: #ebebeb;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 4.78rem;
+  overflow: auto;
+}
+
+.lianxiren dd {
+  width: 100%;
+  height: 0.6rem;
+  background: #fff;
+}
+
+.lianxiren dd a {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  height: 100%;
+  border-bottom: 1px solid #ececec;
+  position: relative;
+}
+
+.lianxiren dd a div {
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.2rem;
+}
+
+.lianxiren dd a img {
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.2rem;
+}
+
+.lianxiren dd a p {
+  position: absolute;
+  left: 0.8rem;
+  top: 0.2rem;
+  width: 50%;
+  height: 0.3rem;
+  font-size: 0.16rem;
+  color: #333;
+}
+
+.lianxiren dt {
+  width: 100%;
+  height: 0.3rem;
+  color: #888;
+  padding-left: 0.3rem;
+  box-sizing: border-box;
+  line-height: 0.3rem;
+  font-size: 0.16rem;
+}
+
+.new {
+  background: #FA9D3B;
+}
+
+.new::before {
+  content: "\e61d";
+  color: #fff;
+  font-size: 0.35rem;
+  position: absolute;
+  left: 0.02rem;
+  top: 0;
+}
+
+.qun {
+  background: #45C01A;
+}
+
+.qun::before {
+  content: "\e652";
+  color: #fff;
+  font-size: 0.35rem;
+  position: absolute;
+  left: 0.02rem;
+  top: 0;
+}
+
+.bian {
+  background: #2782D7;
+}
+
+.bian::before {
+  content: "\e629";
+  color: #fff;
+  font-size: 0.33rem;
+  position: absolute;
+  left: 0.03rem;
+  top: -0.03rem;
+}
+
+.gong {
+  background: #2782D7;
+}
+
+.gong::before {
+  content: "\e6f1";
+  color: #fff;
+  font-size: 0.3rem;
+  position: absolute;
+  left: 0;
+  top: 0.03rem;
+}
+
+.faxian {
+  position: absolute;
+  background: #ebebeb;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 4.78rem;
+  overflow: auto;
+}
+
+.faxian dt {
+  width: 100%;
+  height: 0.3rem;
+}
+
+.faxian dd {
+  width: 100%;
+  height: 0.5rem;
+  background: #fff;
+  position: relative;
+}
+
+.faxian dd a {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  height: 100%;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  line-height: 0.5rem;
+  padding-left: 0.4rem;
+  color: #333;
+  font-size: 0.16rem;
+}
+
+#fri::before {
+  content: "\e706";
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
+  font-size: 0.2rem;
+  color: #d3f433;
+}
+
+#sao::before {
+  content: "\e602";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.01rem;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#yao::before {
+  content: "\e685";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.01rem;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#fu::before {
+  content: "\e652";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.01rem;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#piao::before {
+  content: "\e60a";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.01rem;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#gou::before {
+  content: "\e65f";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.01rem;
+  font-size: 0.24rem;
+  color: #F86161;
+}
+
+#you::before {
+  content: "\e6e6";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.01rem;
+  font-size: 0.24rem;
+  color: #F86161;
+}
+
+.wo {
+  position: absolute;
+  background: #ebebeb;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 4.78rem;
+  overflow: auto;
+}
+
+.wo dt {
+  width: 100%;
+  height: 0.2rem;
+}
+
+.wo dd {
+  width: 100%;
+  height: 0.6rem;
+  background: #fff;
+}
+
+.wo dd a {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+  line-height: 0.6rem;
+  box-sizing: border-box;
+  padding-left: 0.3rem;
+  color: #333;
+  font-size: 0.16rem;
+  border-bottom: 1px solid #edede8;
+}
+
+.wo .geren {
+  height: 0.9rem;
+  position: relative;
+}
+
+.wo .geren img {
+  width: 0.7rem;
+  position: absolute;
+  left: 0.2rem;
+  top: 0.1rem;
+}
+
+.wo .geren p {
+  width: 50%;
+  height: 0.3rem;
+  position: absolute;
+  left: 1rem;
+  top: 0.2rem;
+  color: #666;
+  font-size: 0.16rem;
+}
+
+.wo .geren span {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  color: #888;
+  font-size: 0.14rem;
+}
+
+.wo .geren::after {
+  content: "\e630";
+  font-size: 0.4rem;
+  color: #888;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.15rem;
+}
+
+#ce::before {
+  content: "\e601";
+  position: absolute;
+  left: 0;
+  top: 0.02rem;
+  font-size: 0.2rem;
+  color: #10AEFF;
+}
+
+#shouc::before {
+  content: "\e687";
+  position: absolute;
+  left: -0.02rem;
+  top: 0;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#qianb::before {
+  content: "\e625";
+  position: absolute;
+  left: -0.02rem;
+  top: 0;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#youh::before {
+  content: "\e610";
+  position: absolute;
+  left: -0.02rem;
+  top: 0;
+  font-size: 0.24rem;
+  color: #10AEFF;
+}
+
+#biaoq::before {
+  content: "\e6b1";
+  position: absolute;
+  left: -0.02rem;
+  top: 0;
+  font-size: 0.24rem;
+  color: #FFCA00;
+}
+
+.dibu {
+  z-index: 10;
+  background: #fcfcfc;
+  border-top: 1px solid #dadada;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  margin: 0;
+}
+
+.dibu li {
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.dibu li span {
+  color: #999;
+  font-size: 0.12rem;
+  line-height: 0.73rem;
+}
+
+.dibu li:nth-child(1) span::before {
+  content: "\e65c";
+  font-size: 0.2rem;
+  color: #999;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -0.16rem;
+}
+
+.dibu li:nth-child(2) span::before {
+  content: "\e621";
+  font-size: 0.2rem;
+  display: block;
+  color: #999;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -0.18rem;
+}
+
+.dibu li:nth-child(3) span::before {
+  content: "\e608";
+  font-size: 0.2rem;
+  display: block;
+  color: #999;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -0.16rem;
+}
+
+.dibu li:nth-child(4) span::before {
+  content: "\e60d";
+  font-size: 0.2rem;
+  display: block;
+  color: #999;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -0.18rem;
+}
+
+.dibu li .bianse {
+  color: #46BF1C;
+}
+
+.dibu li .bianse::before {
+  color: #46bf1c;
+}
+
+.cengji {
+  z-index: 5;
+}
